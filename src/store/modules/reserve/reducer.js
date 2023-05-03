@@ -1,11 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit'
+const initialState = []
 
-const reserveSlice = createSlice({
-  name: 'reserve',
-  initialState: [],
-  reducers: {
-    // Seus reducers aqui
+const reserveReducer = (state = initialState, { type, payload }) => {
+  console.log(state)
+  switch (type) {
+    case 'ADD_RESERVE':
+      return [...state, payload]
+    default:
+      return state
   }
-})
+}
 
-export default reserveSlice
+export default reserveReducer
