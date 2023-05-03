@@ -12,7 +12,7 @@ function Reservas() {
         <div key={reserve.id} className="reservas">
           <img src={reserve.image} alt={reserve.title} />
           <strong>{reserve.title}</strong>
-          <span>Quatidade: 2</span>
+          <span>Quatidade: {reserve.amount}</span>
           <button type="button" onClick={() => {}}>
             <MdDelete size={20} color="#191919" />
           </button>
