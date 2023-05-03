@@ -17,6 +17,14 @@ const reserveReducer = (state = initialState, { type, payload }) => {
           })
         }
       })
+    case 'REMOVE_RESERVE':
+      return produce(state, draft => {
+        const tripIndex = draft.findIndex(trip => trip.id === payload)
+
+        if (tripIndex >= 0) {
+          draft.splice(tripIndex, 1)
+        }
+      })
     default:
       return state
   }
