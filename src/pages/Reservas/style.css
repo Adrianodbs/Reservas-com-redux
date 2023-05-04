@@ -31,6 +31,11 @@ footer button{
   font-weight: bold;
 }
 
+footer button a{
+  text-decoration: none;
+  color: #242424;
+}
+
 .reservas #amount{
   display: flex;
   align-items: center;

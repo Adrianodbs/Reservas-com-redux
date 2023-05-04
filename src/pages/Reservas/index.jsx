@@ -5,6 +5,7 @@ import {
   removeReserve,
   updateAmountReserve
 } from '../../store/modules/reserve/actions'
+import { Link } from 'react-router-dom'
 
 function Reservas() {
   const reserves = useSelector(state => state.reserve)
@@ -46,7 +47,9 @@ function Reservas() {
       ))}
 
       <footer>
-        <button type="button">Solicitar reservas</button>
+        <button type="button">
+          <Link to="/">Solicitar reservas</Link>
+        </button>
       </footer>
     </div>
   )
