@@ -1,23 +1,17 @@
 import { useState, useEffect } from 'react'
-import api from '../../services/api'
 import { MdFlightTakeoff } from 'react-icons/md'
 import './style.css'
 
 import { useDispatch } from 'react-redux'
 import { addReserve } from '../../store/modules/reserve/actions'
+import { tripsList } from '../../services/trips'
 
 function Home() {
   const dispatch = useDispatch()
   const [trips, setTrips] = useState([])
 
   useEffect(() => {
-    async function loadApi() {
-      const response = await api.get('trips')
-
-      setTrips(response.data)
-    }
-
-    loadApi()
+    setTrips(tripsList)
   }, [])
 
   function handleAdd(trip) {
