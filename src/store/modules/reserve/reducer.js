@@ -25,6 +25,18 @@ const reserveReducer = (state = initialState, { type, payload }) => {
           draft.splice(tripIndex, 1)
         }
       })
+    case 'UPDATE_RESERVE': {
+      if (payload.amount <= 0) {
+        return state
+      }
+      return produce(state, draft => {
+        const tripIndex = draft.findIndex(trip => trip.id === payload.id)
+
+        if (tripIndex >= 0) {
+          draft[tripIndex].amount = Number(payload.amount)
+        }
+      })
+    }
     default:
       return state
   }
